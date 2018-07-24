@@ -425,7 +425,7 @@ public final class Collection: CollectionQueryable {
     /// - throws: When unable to send the request/receive the response, the authenticated user doesn't have sufficient permissions or an error occurred
     ///
     /// - returns: The `Value` received from the server as specified in the link of the additional information
-    public func findAndUpdate(_ query: Query? = nil, with: Document, filterArrays: Document?, upserting: Bool? = nil, returnedDocument: ReturnedDocument = .old, sortedBy sort: Sort? = nil, projection: Projection? = nil) throws -> Document {
+    public func findAndUpdate(_ query: Query? = nil, with: Document, filterArrays: Document? = nil, upserting: Bool? = nil, returnedDocument: ReturnedDocument = .old, sortedBy sort: Sort? = nil, projection: Projection? = nil) throws -> Document {
         var command: Document = ["findAndModify": self.name]
         
         if let query = query {
